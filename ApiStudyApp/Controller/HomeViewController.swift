@@ -16,7 +16,6 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "QiitaAPI"
         tableView.dataSource = self
         tableView.frame = view.frame
         view.addSubview(tableView)
@@ -46,6 +45,11 @@ extension HomeViewController: UITableViewDataSource {
         cell.textLabel?.text = qiitaDataModel.title
         cell.detailTextLabel?.text = qiitaDataModel.user.name
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        self.title = "QiitaAPI"
+        return title
     }
     
     
